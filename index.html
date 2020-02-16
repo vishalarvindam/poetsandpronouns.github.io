@@ -3,205 +3,1548 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>Minimal by Steve Smith</title>
+    <title>NYU Semantics Group</title>
 
-    <link rel="stylesheet" href="stylesheets/styles.css">
-    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
-    <meta name="viewport" content="width=device-width">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <!-- <link rel='stylesheet' href='fullcalendar/fullcalendar.css' /> -->
+    <!-- <script src='fullcalendar/lib/jquery.min.js'></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <!-- <script src='fullcalendar/lib/moment.min.js'></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js'></script>
+    <!-- <script src='fullcalendar/fullcalendar.js'></script> -->
+    <!-- <script type='text/javascript' src='fullcalendar/gcal.js'></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/fullcalendar.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/gcal.js'></script>
+    <link rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/fullcalendar.min.css'/>
+    <link rel='stylesheet' media='print'
+          href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.5.0/fullcalendar.print.css'/>
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script type='text/javascript'>
+      $(document).ready(function() {
+        // page is now ready, initialize the calendar...
+        $('#calendar').fullCalendar({
+          googleCalendarApiKey: 'AIzaSyBGq3YXhr92Vx8-p-VXAQmixHmWKLA_5Vo',
+          // put your options and callbacks here
+          header: {
+            left: 'title',
+            center: '',
+            right: 'prev,next'
+          },
+          events: {
+            googleCalendarId: 'qirrdmgmmo0v777dcdri7sd6tg@group.calendar.google.com'
+          },
+          eventColor: '#39c',
+          timeFormat: 'h(:mm)',
+          fixedWeekCount: false,
+          aspectRatio: 1.5,
+          eventRender: function(event, element) {
+            element.html(event.start.format('h:mm'));
+          }
+        });
+      });
+    </script>
   </head>
+
   <body>
     <div class="wrapper">
       <header>
-        <h1>Minimal</h1>
-        <p>A Theme for GitHub Pages</p>
-        <p class="view"><a href="http://github.com/orderedlist/minimal">View the Project on GitHub <small>orderedlist/minimal</small></a></p>
-        <ul>
-          <li><a href="https://github.com/orderedlist/minimal/zipball/master">Download <strong>ZIP File</strong></a></li>
-          <li><a href="https://github.com/orderedlist/minimal/tarball/master">Download <strong>TAR Ball</strong></a></li>
-          <li><a href="http://github.com/orderedlist/minimal">Fork On <strong>GitHub</strong></a></li>
-        </ul>
+      <h1>NYU Semantics Group</h1>
+      <p class="view">
+      <a href="http://linguistics.as.nyu.edu/object/linguistics.labs.sem"></a>
+      </p>
+      <p class="view">
+      We are an informal talk series focusing on semantics and related subfields. Meetings take place at 10:15am on Friday, in room #103 of <a href="http://goo.gl/maps/7GmnG">10 Washington Place</a>, unless noted otherwise. Talks are 60 minutes in length, followed by a 30 minute Q&amp;A session.
+      </p>
+      <p class="view">
+      To contact the organizers or to subscribe to the NYU semantics mailing list, please email semantics-group[at]nyu.edu.
+      </p>
+      <br>
+      <div id='calendar'></div>
+      <p><small>Hosted on GitHub Pages &mdash;
+        Theme by <a href="https://github.com/orderedlist">orderedlist</a></small>
+      </p>
       </header>
+
       <section>
-        <h1>GitHub Flavored Markdown</h1>
-
-        <p><em>View the <a href="http://github.github.com/github-flavored-markdown/sample_content.html">source of this content</a>.</em></p>
-
-        <p>Let's get the whole "linebreak" thing out of the way. The next paragraph contains two phrases separated by a single newline character:</p>
-
-        <p>Roses are red<br>
-        Violets are blue</p>
-
-        <p>The next paragraph has the same phrases, but now they are separated by two spaces and a newline character:</p>
-
-        <p>Roses are red<br><br>
-        Violets are blue</p>
-
-        <p>Oh, and one thing I cannot stand is the mangling of words with multiple underscores in them like perform_complicated_task or do_this_and_do_that_and_another_thing.</p>
-
-        <h2>A bit of the GitHub spice</h2>
-
-        <p>In addition to the changes in the previous section, certain references are auto-linked:</p>
-
-        <ul>
-          <li>SHA: be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2</li>
-          <li>User@SHA ref: <a href="https://github.com/mojombo/product/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2" class="commit-link">mojombo@<tt>be6a8cc</tt></a></li>
-          <li>User/Project@SHA: <a href="https://github.com/mojombo/god/commit/be6a8cc1c1ecfe9489fb51e4869af15a13fc2cd2" class="commit-link">mojombo/god@<tt>be6a8cc</tt></a></li>
-          <li>#Num: <a href="https://github.com/github/product/issues/1" class="issue-link" title="Baseline: What is up in the air right now?">#1</a></li>
-          <li>User/#Num: mojombo#1</li>
-          <li>User/Project#Num: <a href="https://github.com/mojombo/god/issues/1" class="issue-link" title="The server is not available (or you do not have permissions to access it)">mojombo/god#1</a></li>
-        </ul>
-
-        <p>These are dangerous goodies though, and we need to make sure email addresses don't get mangled:</p>
-
-        <p>My email addy is <a href="mailto:tom@github.com">tom@github.com</a>.</p>
-
-        <h2>Math is hard, let's go shopping</h2>
-
-        <p>In first grade I learned that 5 &gt; 3 and 2 &lt; 7. Maybe some arrows. 1 -&gt; 2 -&gt; 3. 9 &lt;- 8 &lt;- 7.</p>
-
-        <p>Triangles man! a^2 + b^2 = c^2</p>
-
-        <h2>We all like making lists</h2>
-
-        <p>The above header should be an H2 tag. Now, for a list of fruits:</p>
-
-        <ul>
-          <li>Red Apples</li>
-          <li>Purple Grapes</li>
-          <li>Green Kiwifruits</li>
-        </ul>
-
-        <p>Let's get crazy:</p>
-
-        <ol>
+      <h2><strong>Upcoming Talks</strong></h2>
+      
+            <h3>Spring 2020</h3>       
+            
+ <ul class="cl-effect-1">   
           <li>
-            <p>This is a list item with two paragraphs. Lorem ipsum dolor<br>
-            sit amet, consectetuer adipiscing elit. Aliquam hendrerit<br>
-            mi posuere lectus.</p>
-
-            <p>Vestibulum enim wisi, viverra nec, fringilla in, laoreet<br>
-            vitae, risus. Donec sit amet nisl. Aliquam semper ipsum<br>
-            sit amet velit.</p>
+          <p>
+            <b>Friday, Mar 6. 1:30-3:00pm. Room 104. </b>
+            <br> 
+             <a href="https://people.ucsc.edu/~farkas/">Donka Farkas</a> (UC Santa Cruz)
+            <br> 
+          </p>
           </li>
-          <li><p>Suspendisse id sem consectetuer libero luctus adipiscing.</p></li>
-        </ol>
+     </ul>   
 
-        <p>What about some code <strong>in</strong> a list? That's insane, right?</p>
-
-        <ol>
+<ul class="cl-effect-1">   
           <li>
-            <p>In Ruby you can map like this:</p>
-
-            <pre><code>['a', 'b'].map { |x| x.uppercase }</code></pre>
+          <p>
+            <b>Friday, Mar 27. 10:15-11:45am.</b>
+            <br> 
+             <a href="https://alxatib.commons.gc.cuny.edu/">Sam Alxatib</a> (CUNY)
+            <br> 
+          </p>
           </li>
+     </ul>   
+          
+<ul class="cl-effect-1">   
           <li>
-            <p>In Rails, you can do a shortcut:</p>
-
-            <pre><code>['a', 'b'].map(&amp;:uppercase)</code></pre>
+          <p>
+            <b>Friday, May 8. 2:00-3:30pm. Room 104. </b>
+            <br> 
+             <a href="http://www.jimpryor.net/">Jim Pryor</a> (NYU)
+            <br> 
+          </p>
           </li>
-        </ol>
+     </ul>   
 
-        <p>Some people seem to like definition lists</p>
+      <h2><strong>Archive</strong></h2>
 
-        <dl>
-          <dt>Lower cost</dt>
-          <dd>The new version of this product costs significantly less than the previous one!</dd>
-          <dt>Easier to use</dt>
-          <dd>We've changed the product so that it's much easier to use!</dd>
-        </dl>
+   <h3>Spring 2020</h3>
 
-        <h2>I am a robot</h2>
+  <ul class="cl-effect-1">   
+          <li>
+          <p>
+            <b>Friday, Feb 14. 10:15-11:45am.</b>
+            <br> 
+             <a href="https://www.nyu.edu/projects/barker/">Chris Barker</a> (NYU)
+            <br> 
+<b>Rethinking scope islands</b> <a class="abstract" href="abstracts/barker-spring-2020.html">abstract</a>
+          </p>
+          </li>
+     </ul>  
 
-        <p>Maybe you want to print <code>robot</code> to the console 1000 times. Why not?</p>
+  <ul class="cl-effect-1">   
+          <li>
+          <p>
+            <b>Thursday, Jan 30. 2:00-3:30pm.</b>
+            <br> 
+             <a href="http://linguistics.berkeley.edu/~ardeal/">Amy Rose Deal</a> (UC Berkeley)
+            <br> 
+<b>Uncentered attitude reports</b> <a class="abstract" href="abstracts/deal-spring-2020.html">abstract</a>
+          </p>
+          </li>
+     </ul>   
 
-        <pre><code>def robot_invasion
-  puts("robot " * 1000)
-end
-</code></pre>
+ <h3>Fall 2019</h3>
 
-        <p>You see, that was formatted as code because it's been indented by four spaces.</p>
+  <ul class="cl-effect-1">   
+          <li>
+          <p>
+            <b>Friday, Dec 13. 10:15-11:45am.</b>
+            <br> 
+             <a href="https://champollion.com">Lucas Champollion</a> (NYU)
+            <br> 
+<b>Donkeys under Discussion</b> <a class="abstract" href="abstracts/champollion-fall-2019.html">abstract</a> 
+          </p>
+          </li>
+     </ul>    
 
-        <p>How about we throw some angle braces and ampersands in there?</p>
+  <ul class="cl-effect-1">   
+          <li>
+          <p>
+            <b>Friday, Nov 8. 10:15-11:45am.</b>
+            <br> 
+             <a href="https://wp.nyu.edu/paloma/">Paloma Jereti&#269;</a> (NYU)
+            <br>
+<b>Strengthening and scalemate association in the modal domain</b> <a class="abstract" href="abstracts/jeretic-fall-2019.html">abstract</a> 
+          </p>
+          </li>
+     </ul>    
 
-        <pre><code>&lt;div class="footer"&gt;
-    &amp;copy; 2004 Foo Corporation
-&lt;/div&gt;
-</code></pre>
+   <ul class="cl-effect-1">   
+          <li>
+          <p>
+            <b>Friday, Oct 18. 10:15-11:45am.</b>
+            <br> 
+             <a href="https://www.nadinetheiler.net/">Nadine Theiler</a> (UConn)
+            <br>
+<b>Witness protection</b> <a class="abstract" href="abstracts/theiler-fall-2019.html">abstract</a> 
+          </p>
+          </li>
+     </ul>  
 
-        <h2>Set in stone</h2>
+     <ul class="cl-effect-1">   
+          <li>
+          <p>
+            <b>Friday, Oct 11. 10:30am-1:00pm.</b>
+            <br> 
+             <a href="https://people.ucsc.edu/~farkas/">Donka Farkas</a> (UCSC/Princeton)
+            <br>
+<b>Uses of cross-linguistic semantics</b> <a class="abstract" href="abstracts/farkas-fall-2019.html">abstract</a> 
+          </p>
+          </li>
+     </ul>        
 
-        <p>Preformatted blocks are useful for ASCII art:</p>
+   <ul class="cl-effect-1">   
+          <li>
+          <p>
+            <b>Thursday, Aug 29. 3:00-4:30pm.</b>
+            <br> 
+             <a href="alexwarstadt.com">Alex Warstadt</a> (NYU)
+            <br>
+<b>Just: Don't ask the question</b> <a class="abstract" href="abstracts/warstadt-fall-2019.html">abstract</a>
+          </p>
+          </li>
+     </ul>       
+      
+ <h3>Spring 2019</h3> 
 
-        <pre>             ,-.
-    ,     ,-.   ,-.
-   / \   (   )-(   )
-   \ |  ,.&gt;-(   )-&lt;
-    \|,' (   )-(   )
-     Y ___`-'   `-'
-     |/__/   `-'
-     |
-     |
-     |    -hrr-
-  ___|_____________
-</pre>
+                     
 
-        <h2>Playing the blame game</h2>
+   <ul class="cl-effect-1">   
+          <li>
+          <p>
+            <b>Thursday, May 23. 12:00pm.</b>
+            <br> 
+             <a href="https://www.jacoporomoli.com/">Jacopo Romoli</a> (Ulster)
+            <br>
+<b>Homogeneity or implicature: an experimental approach</b> <a class="abstract" href="abstracts/romoli-spring-2019.html">abstract</a>
+          </p>
+          </li>
+          
 
-        <p>If you need to blame someone, the best way to do so is by quoting them:</p>
 
-        <blockquote>
-        <p>I, at any rate, am convinced that He does not throw dice.</p>
-        </blockquote>
+        
+       </ul>  
+       <ul class="cl-effect-1">   
+        <li>
+          <p>
+            <b>Wednesday, May 8. 3:30pm.</b>
+            <br>
+             <a href="https://simoncharlow.com/">Simon Charlow</a> (Rutgers)
+            <br>
+<b>Local contexts in ellipsis</b> <a class="abstract" href="abstracts/charlow-spring-2019.html">abstract</a>
+          </p>
+        </li>  
+        <li>
+          <p>
+            <b>Friday, May 3. 12:00pm.</b>
+            <br>
+             <a href="http://friederike-moltmann.com/">Friederike Moltmann</a> (CNRS/NYU)
+            <br>
+<b>The Core-Periphery Distinction in Syntax, Semantics, and Natural Language Ontology</b> <a class="abstract" href="abstracts/moltmann-spring-2019.html">abstract</a>
+          </p>
+        </li> 
+        <li>
+          <p>
+            <b>Friday, April 26. 12:00pm</b>. 
+            <br>
+             <a href="https://scholar.harvard.edu/auroregonzalez/home">Aurore Gonzalez</a> (Harvard)
+            <br>
+<b>Question-Answer Clauses: relation to focus
+</b> <a class="abstract" href="abstracts/gonzalez-spring-2019.html">abstract</a>
 
-        <p>Or perhaps someone a little less eloquent:</p>
+          </p>
+        </li>       
+         <li>
+          <p>
+            <b>Thursday, April 25. 11:00am. 4th floor lounge.</b>
+            <br>
+             <a href="https://sites.google.com/site/zhanglinmin/">Linmin Zhang</a> (NYU Shanghai)
+            <br>
+<b>Split semantics for non-monotonic quantifiers in <i>than</i>-clauses</b> <a class="abstract" href="abstracts/zhang-spring-2019.html">abstract</a>
+          </p>
+        </li>       
+        
+                <li>
+          <p>
+            <b>Friday, April 19. 10:15am.</b>
+            <br>
+             <a href="http://www.rci.rutgers.edu/~dayal/">Veneeta Dayal</a> (Yale)
+            <br>
+<b>The Fine Structure of the Interrogative Left Periphery</b> <a class="abstract" href="abstracts/dayal-spring-2019.html">abstract</a>
+          </p>
+        </li>       
+           <li>
+          <p>
+            <b>Friday, March 1. 10:15am.</b>
+            <br>
+             <a href="https://www.sunwoojeong.com/">Sunwoo Jeong</a> (Princeton)
+            <br>
+<b>Deriving dual dimensions of bias: preposed negation questions with even-type expressions</b> <a class="abstract" href="abstracts/jeong-spring-2019.html">abstract</a>
+          </p>
+        </li>
+      </ul> 
+      
+            <h3>Winter 2019</h3> 
+      
+       <ul class="cl-effect-1">    
 
-        <blockquote>
-        <p>I wish you'd have given me this written question ahead of time so I<br>
-        could plan for it... I'm sure something will pop into my head here in<br>
-        the midst of this press conference, with all the pressure of trying to<br>
-        come up with answer, but it hadn't yet...</p>
 
-        <p>I don't want to sound like<br>
-        I have made no mistakes. I'm confident I have. I just haven't - you<br>
-        just put me under the spot here, and maybe I'm not as quick on my feet<br>
-        as I should be in coming up with one.</p>
-        </blockquote>
+        <li>
+          <p>
+            <b>Monday, January 7. 12:00pm.</b>
+            <br>
+             <a href="https://sites.google.com/site/qciyang/">Ciyang Qing</a> (Stanford)
+            <br>
+            <b>A modular approach to focus intervention effects</b> <a class="abstract" href="abstracts/qing-winter-2019.html">abstract</a>
+          </p>
+        </li>
+        
+       </ul>  
+      
+    <h3>Fall 2018</h3> 
+    
+    
+    <ul>
+        <li>
+          <p>
+            <b>Friday, December 14. 10:15am.</b>
+            <br>
+             <a href="https://sites.google.com/view/haozeli/about-me?authuser=0">Haoze Li</a> (NYU)
+            <br>
+            <b>A dynamic approach to short answers: A case study of Mandarin <i>wh</i>-conditionals</b> <a class="abstract" href="abstracts/li-fall-2018.html">abstract</a>
+          </p>
+        </li>
 
-        <h2>Table for two</h2>
+          
+         <li>
+          <p>
+            <b>Friday, December 7. 10:15am.</b>
+            <br>
+            Lucas Champollion, Anna Alsop, and Ioana Grosu (NYU)
+            <br>
+            <b>Free choice as a rational speech act</b> <a class="abstract" href="abstracts/champollion-alsop-grosu-fall-2018.html">abstract</a>
+          </p>
+        </li>
+         <li>
+          <p>
+            <b>Friday, November 30. 10:15am.</b>
+            <br>
+            Ekaterina Vostrikova (UMass)
+            <br>
+            <b>Phrasal and Clausal Exceptive-Additive Constructions Crosslinguistically</b> <a class="abstract" href="abstracts/vostrikova-fall-2018.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, November 9. 10:15am.</b>
+            <br>
+            <a href="https://www.nyu.edu/projects/szabolcsi/">Anna Szabolcsi</a> (NYU)
+            <br>
+            <b>Unconditionals and free choice</b> <a class="abstract" href="abstracts/szabolcsi-fall-2018.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, September 14. 10:15am.</b>
+            <br>
+            <a href="https://sites.google.com/site/jesslawhk/home">Jess H.-K. Law</a> (Rutgers)
+            <br>
+            <b>Binominal <i>each</i> measures distributivity</b> <a class="abstract" href="abstracts/law-fall-2018.html">abstract</a>
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            <b>Friday, September 21. 12:30pm. Room 104.</b>
+            <br>
+            <a href="http://campuspress.yale.edu/joshuaknobe/">Joshua Knobe</a> (Yale), in conjunction with <a href="https://sites.google.com/site/philippeschlenkerteaching/nyu18">Philippe Schlenker's seminar</a>
+            <br>
+            <b>The Statistical, the Prescriptive, and the Undifferentiated.</b> <a class="abstract" href="abstracts/knobe-fall-2018.html">abstract</a>
+          </p>
+        </li>
+         <li>
+          <p>
+            <b>Tuesday, September 25. 1:45pm. Room 104.</b>
+            <br>
+            <a href="https://scholar.harvard.edu/yxiang/home">Yimei Xiang</a> (Rutgers)
+            <br>
+            <b>A hybrid categorial approach of question composition.</b> <a class="abstract" href="abstracts/xiang-fall-2018.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, September 28. 10:15am.</b>
+            <br>
+            Sascha Alexeyenko (Göttingen)
+            <br>
+            <b>On Events, Habituals, and Generalized Quantifiers.</b> <a class="abstract" href="abstracts/alexeyenko-fall-2018.html">abstract</a>
+          </p>
+        </li>
+                        <li>
+          <p>
+            <b>Friday, October 26. 1:45pm</b>.
+            <br>
+            <a href="https://alexwarstadt.com/">Alex Warstadt</a> (NYU)
+            <br>
+            <b><i>Just</i> refuses to answer the QUD</b> <a class="abstract" href="abstracts/warstadt-fall-2018.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+      <h3>Summer 2018</h3> 
+      
+      
+      <ul class="cl-effect-1"> 
+        <li>
+          <p>
+            <b>Tuesday, May 15. 12pm. Room 104.</b>
+            <br>
+            <a href="https://sites.google.com/site/amiraanvari/">Amir Anvari</a> (Jean-Nicod)
+            <br>
+            <b>Context-shift in Farsi, and the Ban Against Illeism</b> <a class="abstract" href="abstracts/anvari-summer-2018.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Tuesday, May 15. 2pm. Room 104.</b>
+            <br>
+            <a href="https://thomvangessel.nl">Thom van Gessel</a> (ILLC)
+            <br>
+            <b>Pair-list readings in Inquisitive Semantics</b> <a class="abstract" href="abstracts/thom-summer-2018.html">abstract</a>
+          </p>
+        </li>
+      </ul>      
+          
+      <h3>Spring 2018</h3> 
+      
+      <ul class="cl-effect-1"> 
+        <li>
+          <p>
+            <b>Monday, January 22. 12:30pm. 4th floor lounge.</b>
+            <br>
+            Hanzhi Zhu (MIT)
+            <br>
+            <b><i>Already</i>, just scalarity</b> <a class="abstract" href="abstracts/zhu-spring-2018.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, March 23. 10:15am.</b>
+            <br>
+            <a href="http://terpconnect.umd.edu/~pietro/">Paul Pietroski</a> (Rutgers)
+            <br>
+            <b>Confronting Existential Angst</b> <a class="abstract" href="abstracts/pietroski-spring-2018.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, March 23. 1:45pm</b>.
+            <br>
+            Paloma Jeretic&#780; (NYU)
+<!--              <font size="2">&#269</font> (NYU)-->
+            <br>
+            <b>Structured Questions</b> <a class="abstract" href="abstracts/jeretic-spring-2018.html">abstract</a>
+          </p>
+        </li>
+<!--
+        <li>
+          <p>
+            <s>Friday, March 30. 10:15am.</s> <i>to be rescheduled</i>
+            <br>
+            <a href="https://scholar.harvard.edu/auroregonzalez/home">Aurore Gonzalez</a> (Harvard)            
+            <br>
+            TBA
+          </p>
+        </li>
+-->
+        <li>
+          <p>
+            <b>Friday, April 13. 10:15am.</b>
+            <br>
+            <a href="https://wp.nyu.edu/adinawilliams/">Adina Williams</a> (NYU)
+            <br>
+            <b>Representing Thematic Relations: Reconciling Neuroimaging Data with Formal Semantic Theory (Data Discussion)</b> <a class="abstract" href="abstracts/williams-spring-2018.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+      
+    <ul class="cl-effect-1"> 
+        <li>
+          <p>
+            <b>Friday, April 27. 10:15am.</b>
+            <br>
+            <a href="https://wp.nyu.edu/cournane/">Aili&#769;s Cournane</a> (NYU)
+            <br>
+            <b>Possibilities & Necessities: Acquiring the force dimension of modals</b> <a class="abstract" href="abstracts/cournane-spring-2018.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+      
+      <h3>Fall 2017</h3> 
 
-        <table>
-          <tbody>
-        <tr>
-            <th>ID</th>
-        <th>Name</th>
-        <th>Rank</th>
-          </tr>
-          <tr>
-            <td>1</td>
-        <td>Tom Preston-Werner</td>
-        <td>Awesome</td>
-          </tr>
-          <tr>
-            <td>2</td>
-        <td>Albert Einstein</td>
-        <td>Nearly as awesome</td>
-          </tr>
-        </tbody>
-        </table>
+      <ul class="cl-effect-1"> 
+        <li>
+          <p>
+            <b>Monday, September 11. 6:30pm.</b>
+            <br> at the <a href="http://nylanguageworkshop.tumblr.com/">NY Philosophy of Language Workshop</a>
+            <br>
+            <a href="https://www.nyu.edu/projects/szabolcsi/">Anna Szabolcsi</a> (NYU)
+            <br>
+            <b>On the source of additive presuppositions</b> <a class="abstract" href="abstracts/szabolcsi-fall-2017.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 6. 10:15am.</b>
+            <br>
+            <a href="https://www.seas.upenn.edu/~epavlick/">Ellie Pavlick</a> (Google Research)
+            <br>
+            <b>Compositional Entailment in Adjective-Nouns</b> <a class="abstract" href="abstracts/pavlick-fall-2017.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 13. 10:15am.</b>
+            <br>
+            <a href="http://iceland2017.nelsconference.org">NELS 48</a> practice talks: 
+              <br>
+              <a href="https://sites.google.com/a/nyu.edu/woojin-chung/">WooJin Chung</a> (NYU): <b>Obligation as Counterfactual Reasoning: A Solution to Zvolenszky’s Puzzle</b> <a class="abstract" href="http://iceland2017.nelsconference.org/wp-content/uploads/2017/08/chung.pdf">abstract</a>;
+              <br>
+              <a href="http://esipova.net">Masha Esipova</a> and <a href="http://www.champollion.com">Lucas Champollion</a> (NYU): <b>Focus on adjuncts: events and continuations in the semantics of <i>only</i></b> (poster) <a class="abstract" href="http://iceland2017.nelsconference.org/wp-content/uploads/2017/08/Esipova-Champollion.pdf">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 20. 3:30pm.</b>
+            <br>
+            <a href="http://www.llf.cnrs.fr/fr/Gens/Bernard">Timothée Bernard</a> (Université Paris Diderot)
+            <br>
+            <b>A Montagovian semantics for discourse connectives</b> <a class="abstract" href="abstracts/bernard-fall-2017.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, November 3. 10:15am.</b>
+            <br>
+            <a href="https://www.researchgate.net/profile/Augustina_Owusu">Augustina Owusu</a> (Rutgers)
+            <br>
+            <b>Actuality Entailment in Akan</b> <a class="abstract" href="abstracts/owusu-fall-2017.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, November 10. 10:15am.</b>
+            <br>
+            <a href="http://linguistics.mit.edu/user/smoracc/">Sophie Moracchini</a> (MIT)
+            <br>
+            <b>The morpho-semantics of degree constructions</b> <a class="abstract" href="abstracts/moracchini-fall-2017.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Tuesday, November 14. 3:30pm. 4th floor lounge.</b>
+            <br>
+            <a href="http://hkotek.com">Hadas Kotek</a> (NYU)
+            <br>
+            <b>Which QuD?</b> <a class="abstract" href="abstracts/kotek-fall-2017.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, December 8. 10:15am.</b>
+            <br>
+            <a href="http://www.llf.cnrs.fr/fr/Gens/Bernard">Timothée Bernard</a> (Université Paris Diderot) and <a href="http://www.champollion.com">Lucas Champollion</a> (NYU)
+            <br>
+            <b>Negative events</b> <a class="abstract" href="abstracts/bernard-champollion-fall-2017.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+      
+      
+      <ul class="cl-effect-1"> 
+        <li>
+          <p>
+            <b>Friday, December 15. 10:15am.</b>
+            <br>
+            <a href="http://hkotek.com">Hadas Kotek</a> (NYU)
+            <br>
+            <b>Some Issues with Sluicing as Anaphora to Issues</b> <a class="abstract" href="abstracts/kotek-fall-2017_2.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+      
+      
+      <h3>Summer 2017</h3>    
+          
+      <ul class="cl-effect-1">
+        <li>
+          <p>
+            <b>Tuesday, May 16. 11am.</b>
+            <br>
+            <a href="http://deniz.fr">Deniz Ozyildiz</a> (UMass)
+            <br>
+            <b>Factivity alternations in Turkish</b> <a class="abstract" href="abstracts/ozyildiz-summer-2017.html">abstract</a>
+          </p>
+        </li>  
+        <li>
+          <p>
+            <b>Tuesday, May 16. 12:45pm.</b>
+            <br>
+            <a href="https://sites.google.com/site/zhanglinmin/">Linmin Zhang</a> (Concordia)
+            <br>
+            <b>Ambiguous than-clauses and the mention-some reading</b> <a class="abstract" href="abstracts/zhang-summer-2017.html">abstract</a>
+          </p>
+        </li>   
+        <li>
+          <p>
+            <b>Monday, May 22. 1:30pm.</b>
+            <br>
+            Halley Young (NYU)
+            <br>
+            <b>Formal Syntax and Semantics of Music</b> <a class="abstract" href="abstracts/young-summer-2017.html">abstract</a>
+          </p>
+        </li>  
+        <li>
+          <p>
+            <b>Tuesday, May 23. 12pm.</b>
+            <br>
+            <a href="http://web.stanford.edu/~pnadath/">Prerna Nadathur</a> (Stanford)
+            <br>
+            <b>Causality, aspect, and modality in actuality inferences</b> <a class="abstract" href="abstracts/nadathur-summer-2017.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Wednesday, August 30. 11am.</b>
+            <br>
+            <a href="http://esipova.net">Masha Esipova</a> (NYU)
+            <br>
+            <b>Focus on what's not at issue: gestures, presuppositions, supplements under Contrastive Focus</b> (<a href="https://sinnundbedeutung22.wordpress.com">SuB 22</a> practice talk) <a class="abstract" href="abstracts/esipova-summer-2017.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+          
+      <h3>Spring 2017</h3>
+          
+      <ul class="cl-effect-1">
+          
+        <li>
+          <p>
+            <b>Friday, February 10. 10:15am.</b>
+            <br>
+            <a href="http://www.jeremykuhn.net">Jeremy Kuhn</a> (Institut Jean Nicod)
+            <br>
+            <b>Plurality and dependency: the view from sign language</b> <a class="abstract"
+            href="abstracts/kuhn-spring-2017.html">abstract</a>
+          </p>
+        </li>
+        
+        <li>
+          <p>
+            <b>Friday, March 24. 10:15am.</b>
+            <br>
+            <a href="https://sites.google.com/site/skasyanenko/home">Sonia Kasyanenko</a> (NYU)
+            <br>
+            <b>The Russian Comitative Construction as Relational-Noun Coordination</b> <a class="abstract"
+            href="abstracts/kasyanenko-spring-2017.html">abstract</a>
+          </p>
+        </li>  
+        <li>
+          <p>
+            <b>Friday, April 7. 12pm.</b>
+            <br>
+            <a href="http://www.peterklecha.com">Peter Klecha</a> (Swarthmore)
+            <br>
+              <b>Double Access is Due to Imprecision</b> <a class="abstract" href="abstracts/klecha-spring-2017.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, April 14. 12pm.</b>
+            <br>
+            <a href="https://msu.edu/~taniguc7/">Ai Taniguchi</a> (Michigan State)
+            <br>
+            <b>Exclamatives in discourse</b> <a class="abstract"
+            href="abstracts/taniguchi-spring-2017.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, April 21. 12pm.</b>
+            <br>
+            Elena Musi (Columbia)
+            <br>
+            <b>How did you change my view? A corpus-based study of consessions' persuasive role</b> <a class="abstract"
+            href="abstracts/musi-spring-2017.html">abstract</a>
+          </p>
+        </li>      
+      </ul>
+        
+      <h3>Fall 2016</h3>
+      
+      <ul class="cl-effect-1">
+        <li>
+          <p>
+            <b>Thursday, September 8. 3:30pm. 4th floor lounge.</b>
+            <br>
+            <a href="http://paolosantorio.net/">Paolo Santorio</a> (Leeds)
+            <br>
+            <b>Stability: computing alternatives in conditional antecedents</b> <a class="abstract" href="abstracts/santorio-fall-2016.html">abstract</a>
+          </p>
+        </li>   
+        <li>
+          <p>
+            <b>Wednesday, September 14. 10:30am. 4th floor lounge. (in conjunction with Philippe Schlenker's <a href="https://sites.google.com/site/philippeschlenkerteaching/nyu16">seminar</a> on meaning in speech, sign, and gesture)</b>
+            <br>
+            <a href="https://www.cs.rutgers.edu/~mdstone/">Matthew Stone</a> (Rutgers)
+            <br>
+            <b>Interpreting Multimodal Communicative Action</b> <a class="abstract"
+            href="abstracts/stone-fall-2016.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, September 16. 10:15am.</b> 
+            <br>
+            WooJin Chung (NYU)
+            <br>
+            <b>Decomposing Permission and Obligation: Evidence from Korean</b> <a class="abstract"
+            href="abstracts/chung-fall-2016.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Monday, September 26. 3:30pm. (in conjunction with Philippe Schlenker's <a href="https://sites.google.com/site/philippeschlenkerteaching/nyu16">seminar</a> on meaning in speech, sign, and gesture)</b>
+            <br>
+            <a href="http://gjgreenberg.bol.ucla.edu">Gabe Greenberg</a> (UCLA)
+            <br>
+            <b>The Structure of Visual Content</b> <a class="abstract"
+            href="abstracts/greenberg-fall-2016.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, September 30. 10:15am.</b>
+            <br>
+            <a href="http://dipanjandas.com/">Dipanjan Das</a> (Google)
+            <br>
+            <b>Two Statistical Case Studies in Semantic Inference</b> <a class="abstract"
+            href="abstracts/das-fall-2016.html">abstract</a> 
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 7. 11am.</b>
+            <br>
+            <a href="http://esipova.net">Masha Esipova</a> (NYU)
+            <br>
+            <b>Contrast and distributivity in the semantics of alternation</b> (NELS practice talk) <a class="abstract" href="abstracts/esipova-fall-2016.html">abstract</a>  
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Wednesday, October 12. 10am. 4th floor lounge. (in conjunction with Philippe Schlenker's <a href="https://sites.google.com/site/philippeschlenkerteaching/nyu16">seminar</a> on meaning in speech, sign, and gesture)</b>
+            <br>
+            <a href="https://msuweb.montclair.edu/~abnern/">Natasha Abner</a> (Montclair)
+            <br>
+            <b>Language Emergence and the Gesture-(Sign) Language Continuum</b> <a class="abstract" href="abstracts/abner-fall-2016.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Thursday, October 20. 12:30pm. 4th floor lounge.</b>
+            <br>
+            <a href="http://www.krowland.net">Koen Roelandt</a> (CRISSP/KU Leuven)
+            <br>
+            <b>The Internal Logic of Adjectival Lexical Fields</b> <a class="abstract"
+            href="abstracts/roelandt-fall-2016.html">abstract</a> 
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 21. 10:15am.</b>
+            <br>
+            <a href="https://www.gc.cuny.edu/Page-Elements/Academics-Research-Centers-Initiatives/Doctoral-Programs/Linguistics/Faculty-Bios/Samer-Al-Khatib">Sam Al Khatib</a> (CUNY GC) and <a href="http://www.linguistics.ucla.edu/people/ysharvit/">Yael Sharvit</a> (UCLA)
+            <br>
+            <b>A new puzzle about ellipsis: evidence from tense embedding</b> <a class="abstract"
+            href="abstracts/alxatib-sharvit-fall-2016.html">abstract</a>  
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, November 4. 10:15am.</b>
+            <br>
+            <a href="http://www.rci.rutgers.edu/~db621/">Diti Bhadra</a> (Rutgers)
+            <br>
+            <b>Evidentials in Biased Questions</b> <a class="abstract" href="abstracts/bhadra-fall-2016.html">abstract</a> 
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, November 4.</b>
+            <br>
+            <a href="http://simoncharlow.com">Simon Charlow</a> (Rutgers)
+            <br>
+              <b>Alternatives, and alternative semantics</b> <a class="abstract" href="abstracts/charlow-fall-2016.html">abstract</a> <a class="abstract"
+              href="http://simoncharlow.com/handouts/nyu-alts-2016.pdf">slides</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Monday, November 7. 3:30pm.</b>
+            <br>
+            <a href="http://curtanderson.github.io">Curt Anderson</a> (Düsseldorf)
+            <br>
+            <b>Non-canonical uses of <i>some</i></b> <a class="abstract" href="abstracts/anderson-fall-2016.html">abstract</a>  
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, November 18. 10:15am.</b>
+            <br>
+            Kata Wohlmuth (Pompeu Fabra)
+            <br>
+            <b>The collective-distributive ambiguity &mdash; a view from the corpus</b> <a class="abstract"
+            href="abstracts/wohlmuth-fall-2016.html">abstract</a> 
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, December 9. 10:15am.</b>
+            <br>
+            <a href="https://wp.nyu.edu/dhoek/">Daniel Hoek</a> (NYU Philosophy)
+            <br>
+            <b>Conversational Exculpature and Loose Talk</b> <a class="abstract" href="abstracts/hoek-fall-2016.html">abstract</a> 
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, December 16. 10:15am.</b>
+            <br>
+            <a href="http://www.rci.rutgers.edu/~dayal/">Veneeta Dayal</a> (Rutgers)
+            <br>
+            <b>Local and Long-distance</b> <a class="abstract" href="abstracts/dayal-fall-2016.html">abstract</a>  
+          </p>
+        </li>
+      </ul>
+      
+      <h3>Summer 2016</h3>
+      
+      <ul class="cl-effect-1">
+        <li>
+          <p>
+            <b>Wednesday, June 29. 11am.</b>
+            <br>
+            Barry Schein (USC)
+            <br>
+            <b>Overview of the forthcoming book <i>'And': Conjunction Reduction Redux</i></b>
+            <a href=http://www-bcf.usc.edu/~schein/CRRTOCProspectus.pdf>prospectus</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Wednesday, July 6. 11am.</b>
+            <br>
+            Barry Schein (USC)
+            <br>
+            <b>DP and PredP coordination</b> (chapters 2&ndash;7 of the forthcoming book <i>'And': Conjunction Reduction Redux</i>
+            <a href=http://www-bcf.usc.edu/~schein/CRRTOCProspectus.pdf>prospectus</a>)
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Thursday, July 7. 4pm.</b>
+            <br>
+            Yoad Winter (Utrecht)
+            <br>
+            <b>Lexical reciprocity, logical symmetry, and protopredicates</b>
+            <a class="abstract"
+            href="abstracts/winter-summer-2016.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Wednesday, August 24. 3:30pm.</b>
+            <br>
+            Haoze Li (NYU)
+            <br>
+            <b>Event-related relative measurement</b>
+            <a class="abstract"
+            href="abstracts/li-summer-2016.html">abstract</a>
+            <br>
+            Linmin Zhang (NYU)
+            <br>
+            <b>Modified numerals revisited: the cases of <i>fewer than 4</i> and <i>between 4 and 8</i></b>
+            <a class="abstract"
+            href="abstracts/zhang-summer-2016.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+          
+      <h3>Spring 2016</h3>
 
-        <h2>Crazy linking action</h2>
+      <ul class="cl-effect-1">
+        <li>
+          <p>
+            <b>Friday, February 5. 10:15am.</b>
+            <br>
+            Hannah Rohde (Edinburgh)
+            <br>
+            <b>The context of alternatives</b>
+            <a class="abstract"
+              href="abstracts/rohde-spring-2016.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, February 12. 1:30pm. Room 104.</b>
+            <br>
+            Dylan Bumford (NYU)
+            <br>
+            <b>Split-scope definites: How 'the' can mean two things at
+              once</b>
+            <a class="abstract"
+              href="abstracts/bumford-spring-2016.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, April 15. 10:15am.</b>
+            <br>
+            Thony Gillies (Rutgers)
+            <br>
+            <b>A problem about preference</b>
+            <a class="abstract"
+              href="abstracts/gillies-spring-2016.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Monday, May 2. 3:30pm. (in conjunction with
+              Chris Barker's Semantics II)</b>
+            <br>
+            Daniel B&uuml;ring (Vienna)
+            <br>
+            <b>Unalternative Semantics</b>
+            <a class="abstract"
+            href="abstracts/buring-spring-2016.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Wednesday, May 4. 2pm.</b>
+            <br>
+            Chris Cummins (Edinburgh)
+            <br>
+            <b>Being rational with expressions of number</b>
+            <a class="abstract"
+            href="abstracts/cummins-spring-2016.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, May 6. 10:15am.</b>
+            <br>
+            Lucas Champollion (NYU) 
+            <br>
+            <b>Homogeneity in donkey sentences</b>
+            <a class="abstract"
+            href="abstracts/champollion-spring-2016.html">abstract</a>
+          </p>
+        </li>
+      </ul>
 
-        <p>I get 10 times more traffic from <a href="http://google.com/" title="Google">Google</a> than from<br>
-        <a href="http://search.yahoo.com/" title="Yahoo Search">Yahoo</a> or <a href="http://search.msn.com/" title="MSN Search">MSN</a>.</p>
+      <h3>Fall 2015</h3>
+
+      <ul class="cl-effect-1">
+        <li>
+          <p>
+            <b>Friday, September 18. 10:15am.</b>
+            <br>
+            Haoze Li (NYU) and Jess Law (Rutgers).
+            <br>
+            <b>Alternatives in different dimensions: A case study of focus
+              intervention</b>
+            <a class="abstract"
+              href="abstracts/li-law-fall-2015.html">abstract</a>
+            <a class="abstract"
+              href="handouts/li-law-fall-2015_slides.pdf">slides</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, September 25. 10:15am.</b>
+            <br>
+            Rob Pasternak (Stony Brook).
+            <br>
+            <b>Gradable modality: Putting degrees in the ordering source</b>
+            <a class="abstract"
+              href="abstracts/pasternak-fall-2015.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 2. 10:15am.</b>
+            <br>
+            Itamar Kastner (NYU).
+            <br>
+            <b>Reciprocals reciprocalize themselves but reflexives reflexivize
+              each other</b>
+            <a class="abstract"
+              href="abstracts/kastner-fall-2015.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 9. 2:00pm.</b>
+            <br>
+            Simon Charlow (Rutgers).
+            <br>
+            <b>Monadic dynamic semantics for anaphora</b>
+            <a class="abstract"
+              href="abstracts/charlow-fall-2015.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 23. 10:15am.</b>
+            <br>
+            Lelia Glass (Stanford).
+            <br>
+            <b>A foray into the lexical semantics of distributivity</b>
+            <a class="abstract"
+               href="abstracts/glass-fall-2015.html">abstract</a>
+            <a class="abstract"
+               href="handouts/glass-fall-2015_hdt.pdf">handout</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Tuesday, October 27. 1-3pm. Room 205.</b>
+            <br>
+            Daisuke Bekki and Ribeka Tanaka (Ochanomizu)
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 30. 10:15am. Room 104.</b>
+            <br>
+            Yael Sharvit (UCLA).
+            <br>
+            <b>Comparing theories of Sequence of Tense</b>
+            <a class="abstract"
+              href="abstracts/sharvit-fall-2015.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, November 20. 10:15am.</b>
+            <br>
+            Una Stojnic (Rutgers)
+            <br>
+            <b>Modality, Coherence and Logic</b>
+            <a class="abstract"
+              href="abstracts/stojnic-fall-2015.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Thursday, December 3. 11:00am.</b>
+            <br>
+            Linmin Zhang (NYU)
+            <br>
+            <b>Comparatives revisited: Downward-entailing differentials do not
+              threaten encapsulation theories</b>
+            <a class="abstract"
+              href="abstracts/zhang-fall-2015.html">abstract</a>
+            <br>
+            Jeff Lin (NYU)
+            <br>
+            <b>An Inquisitive Semantics Analysis for Chinese Polar Question
+              Particle</b>
+            <a class="abstract"
+              href="abstracts/lin-fall-2015.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+
+      <h3>Spring 2015</h3>
+
+      <ul class="cl-effect-1">
+        <li>
+          <p>
+            <b>Friday, February 6. 3:30pm, Room 104</b>.
+            <br>
+            Jeremy Kuhn (NYU).
+            <br>
+            <b>Meaning in space: singulars, plurals, and functions in American
+              Sign Language</b>
+            <a class="abstract"
+              href="abstracts/kuhn-spring-2015.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, March 27. 10:15am, Room 103</b>.
+            <br>
+            Tim Sundell (Kentucky) and David Plunkett (Dartmouth).
+            <br>
+            <b>Metalinguistic Negotiation</b>
+            <a class="abstract"
+              href="abstracts/sundell-plunkett-spring-2015.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Tuesday, April 28. 3:30pm, Room 104 (in conjunction with
+              Anna Szabolcsi's seminar on questions)</b>.
+            <br>
+            Maria Aloni (ILLC).
+            <br>
+            <b>Introduction to conceptual covers, puzzles of belief
+              attribution</b>
+          </p>
+        </li>
+        <li>
+          <p>
+            <Strong>Wednesday, April 29. 1:30pm</Strong>
+            <br>
+            Linmin Zhang (NYU).
+            <a class="abstract"
+              href="abstracts/zhang-spring-2015.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <Strong>Tuesday, May 5. 3:30pm, Room 104 (in conjunction Anna Szabolcsi's
+              seminar on questions)</Strong>.
+            <br>
+            Maria Aloni (ILLC).
+            <br>
+            <b>Concealed questions under conceptual covers</b>
+          </p>
+        </li>
+         <li>
+          <p>
+            <Strong>Wednesday, May 6. 1:30pm</Strong>.
+            <br>
+            Alexandre Cremers (ENS).
+            <br>
+            <b>Plurality effects with embedded questions and exhaustive
+              readings</b>
+            <a class="abstract"
+              href="abstracts/cremers-spring-2015.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <Strong>Tuesday, May 12. 3:30pm, Room 104 (in conjunction Anna Szabolcsi's
+              seminar on questions)</Strong>.
+            <br>
+            Maria Aloni (ILLC).
+            <br>
+            <b>Epistemic indefinites and methods of identification</b>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, May 15. 10:15am.</b>
+            <br>
+            Masha Esipova (NYU).
+            <br>
+            <b>Coordinate distributivity in Russian and other languages</b>
+            <a class="abstract"
+              href="abstracts/esipova-spring-2015.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+          <Strong>Thursday, May 21.</Strong>
+            <br>
+            <b>Workshop: The Music/Language Connection</b>
+            <a class="abstract"
+              href="https://sites.google.com/site/themusiclanguageconnection">
+              website</a>
+          </p>
+        </li>
+        <li>
+          <p>
+          <Strong>Wednesday, May 27.</Strong>
+            <br>
+            <b>Workshop: Sign Language Meaning and Cognition</b>
+            <a class="abstract"
+              href="https://sites.google.com/site/signlanguagemeaningcognition">
+              website</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, June 26. 11am.</b>
+            <br>
+            Jeremy Kuhn (NYU).
+            <br>
+            <b>Dependent indefinites in dynamic plural logic</b>
+            <a class="abstract"
+              href="abstracts/kuhn-summer-2015.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+
+      <h3>Fall 2014</h3>
+
+      <ul class="cl-effect-1">
+        <li>
+          <p>
+            <b>Friday, September 26. 10:15am.</b>
+            <br>
+            Jeff Lin (NYU).
+            <br>
+            <b>An Inquisitive Semantics Treatment of Question Particles</b>
+            <a class="abstract"
+              href="abstracts/lin-fall-2014.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Monday, September 29 (in conjunction with Philippe
+              Schlenker's seminar on cross-modal semantics). 4:45pm.</b>
+            <br>
+            Kathryn Davidson (Yale).
+            <br>
+            <b>Role shift, iconicity, and quotation</b>
+            <a class="abstract"
+              href="abstracts/davidson-fall-2014.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 10. 10:15am.</b>
+            <br>
+            Linmin Zhang (NYU).
+            <br>
+            <b>Decomposing English 'and' and 'or'</b>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 17. 10:15am.</b>
+            <br>
+            Joshua Knobe (Yale).
+            <br>
+            <b>The Psychological Representation of Modality</b>
+            <a class="abstract"
+              href="abstracts/knobe-fall-2014.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 24. 10:15am.</b>
+            <br>
+            Marta Castella (Utrecht).
+            <br>
+            <b>Bare Predicates and Extrinsic Properties</b>
+            <a class="abstract"
+              href="abstracts/castella-fall-2014.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+
+      <h3>Spring 2014</h3>
+
+      <ul class="cl-effect-1">
+        <li>
+          <p>
+            <b>Friday, January 31. 12pm, Room 103 (at the Syntax Brown Bag)</b>.
+            <br>
+            Heather Burnett (Montréal).
+            <br>
+            <b>Diachronic Investigations into Compositional Semantics: The Rise
+              and Fall of Resultative Secondary Predication Constructions in the
+              History of French</b>
+            <a class="abstract"
+              href="abstracts/burnett-spring-2014.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, February 7. 3pm, Room 104</b>.  
+            <br>
+            Simon Charlow (NYU).
+            <br>
+            <b>What's exceptional about indefiniteness</b>
+            <a class="abstract"
+              href="abstracts/charlow-spring-2014.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, March 7. 11am (in conjunction with NYU's Open
+              House)</b>.
+            <br>
+            Dylan Bumford (NYU).
+            <br>
+            <b>Universal quantification as iterated conjunction</b>
+            <a class="abstract"
+              href="abstracts/bumford-spring-2014.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            Friday, March 28. 10:15am.
+            <br>
+            Manuel Križ (Vienna).
+            <br>
+            <b>Musings on Homogeneity and Non-Maximality</b>
+            <a class="abstract"
+              href="abstracts/kriz-spring-2014.html">abstract</a>
+            <a class="abstract"
+              href="handouts/kriz-spring-2014_hdt.pdf">handout</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, April 4. 10:15am.</b>
+            <br>
+            Orin Percus (Nantes).
+            <br>
+            <b>Unpronounced indexicality</b>
+            <a class="abstract"
+              href="abstracts/percus-spring-2014.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, May 9. 10:15am.</b>
+            <br>
+            Eva Poortman (Utrecht).
+            <br>
+            <b>Typicality Effects and Plural Predication</b>
+            <a class="abstract"
+              href="abstracts/poortman-spring-2014.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, May 16. 10:15am.</b>
+            <br>
+            Sam Alxatib (CUNY).
+            <br>
+            <b><i>Only</i> and association with negative antonyms</b>
+            <a class="abstract"
+              href="abstracts/alxatib-spring-2014.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, May 23. 10:15am.</b>
+            <br>
+            Philippe Schlenker (NYU, CNRS).
+            <br>
+            <b>Super Monsters: Role Shift and Context Shift Revisited</b>
+            <a class="abstract"
+              href="abstracts/schlenker-spring-2014.html">abstract</a>
+            <br>
+            <a class="abstract"
+              href="http://ling.auf.net/lingbuzz/002069">paper I</a>
+            <a class="abstract"
+              href="http://ling.auf.net/lingbuzz/002074">paper II</a>
+          </p>
+        </li>
+      </ul>
+
+      <br> 
+
+      <h3>Fall 2013</h3>
+
+      <ul class="cl-effect-1">
+        <li>
+          <p>
+            <b>Friday, October 18. 10:15am, Room 103</b>.
+            Jay Atlas (Pomona).
+            <br>
+            <b>'Few', 'A Few', and 'Only' Noun Phrases, Non-Monotonic Quantifiers,
+              and Negative Polarity Items</b>
+            <a class="abstract" href="abstracts/atlas-fall-2013.html">excerpt</a>
+            <a class="abstract" href="handouts/atlas-fall-2013_hdt.pdf">handout</a>
+            <a class="abstract" href="handouts/atlas-fall-2013_ms.pdf">manuscript</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 25. 10:15am.</b>
+            Salvador Mascarenhas (NYU).
+            <br>
+            <b>Interpreting the conjunction fallacy</b>
+            <a class="abstract"
+              href="abstracts/mascarenhas-fall-2013.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, December 6. 10:15am, Room 103</b>.
+            Kristina Liefke (LMU).
+            <br>
+            <b>A Single-Type Semantics for Natural Language</b>
+            <a class="abstract" href="abstracts/liefke-fall-2013.html">abstract</a>
+            <a class="abstract" href="handouts/liefke-fall-2013_slides.pdf">slides</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Thursday, December 13. 10:15am.</b>
+            Thomas Icard (CMU).
+            <br>
+            <b>Determining What Follows From What: Two Case Studies</b>
+            <a class="abstract" href="abstracts/icard-fall-2013.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+
+      <br>
+
+      <h3>Spring 2013</h3>
+
+      <ul class="cl-effect-1">
+        <li>
+          <p>
+            <b>Friday, February 8. 1pm.</b>
+            Igor Yanovich (MIT).
+            <br>
+            <b>The secret history of 'must'</b>
+            <a class="abstract" href="abstracts/yanovich.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, February 22. 10:45am.</b>
+            Linmin Zhang (NYU).
+            <br>
+            <b>A rate analysis of the binominal 'each'</b>
+            <a class="abstract" href="abstracts/zhang.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, March 8. 10:45am.</b>
+            Simon Charlow (NYU).
+            <br>
+            <b>Ellipsis really is binding</b>
+            <a class="abstract" href="abstracts/charlow.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, March 15. 10:45am.</b>
+            Jeremy Kuhn (NYU).
+            <br>
+            <b>ASL loci: Variables or features?</b>
+            <a class="abstract" href="abstracts/kuhn.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, March 29. 10:45am.</b>
+            David Erschler (Tübingen).
+            <br>
+            <b>Deriving clause-internal left periphery</b>
+            <a class="abstract" href="abstracts/erschler.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+          <b>Friday, April 19. 10:45am.</b>
+          Dylan Bumford (NYU).
+          <br>
+          <b>Quantifier-Internal Anaphora and Generalized Association with
+            Distributivity</b>
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Tuesday, May 7. 1:45pm, Room 104 (in conjunction with
+              Chris Barker's seminar on adjectives)</strong>.
+            Timothy Leffel (NYU).
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, May 17. 10:45am.</b>
+            Lucas Champollion (NYU).
+            <br>
+            <b>Quantification and negation in event semantics</b>
+            <a class="abstract" href="abstracts/champollion.html">abstract</a>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, May 24. 2pm, Room 103</b>.
+            David Beaver (UT Austin).
+          </p>
+        </li>
+      </ul>
+
+      <br>
+
+      <h3>Fall 2012</h3>
+
+      <ul class="cl-effect-1">
+        <li>
+          <p>
+            <b>Friday, October 5. 11am.</b>
+            Timothy Leffel (NYU), collab. with Radek Šimík and Marta Wierzba (Potsdam).
+            <br>
+            <b>Information structure and pronominal morphology in Basa'a (NELS
+            prep)</b>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 12. 11am.</b>
+            Hanna de Vries (Utrecht).
+            <br>
+            <b>Sums, higher-order entities, and two kinds of distributivity</b>
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Thursday, October 18. 11am, Room 103</strong>.
+            Hazel Pearson (ZAS Berlin).
+            <br>
+            <b>Logophoric pronouns are not obligatorily de se: evidence from
+              Ewe</b>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, October 26. 11am.</b>
+            Dag Westerståhl (Stockholm), collab. with Stanley Peters (Stanford).
+            <br>
+            <b>On the semantics of possessives</b>
+          </p>
+        </li>
+        <li>
+          <p>
+            <strong>Tuesday, November 27. 2:30pm</strong>.
+            Salvador Mascarenhas (NYU).
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, November 30. 1pm</b>.
+            Allyson Ettinger (NYU) and Sophia Malamud (Brandeis).
+            <br>
+            <b>Mandarin utterance-final particle <em>ba</em> and conversational
+              goals</b>
+          </p>
+        </li>
+        <li>
+          <p>
+            <b>Friday, December 14. 11am.</b>
+            Ivano Ciardelli (Amsterdam/ILLC).
+            <br>
+            <b>An inquisitive perspective on meaning</b>
+            <a class="abstract" href="abstracts/ciardelli.html">abstract</a>
+          </p>
+        </li>
+      </ul>
+
       </section>
       <footer>
-        <p>This project is maintained by <a href="http://github.com/orderedlist">Steve Smith</a></p>
-        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
       </footer>
     </div>
-    <script src="javascripts/scale.fix.js"></script>
+    <!-- <script src="javascripts/scale.fix.js"></script> -->
   </body>
 </html>
