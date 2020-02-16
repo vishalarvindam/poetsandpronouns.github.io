@@ -10,15 +10,51 @@
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
 
-   
+    <!-- <link rel='stylesheet' href='fullcalendar/fullcalendar.css' /> -->
+    <!-- <script src='fullcalendar/lib/jquery.min.js'></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+    <!-- <script src='fullcalendar/lib/moment.min.js'></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.13.0/moment.min.js'></script>
+    <!-- <script src='fullcalendar/fullcalendar.js'></script> -->
+    <!-- <script type='text/javascript' src='fullcalendar/gcal.js'></script> -->
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/fullcalendar.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/gcal.js'></script>
+    <link rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.7.3/fullcalendar.min.css'/>
+    <link rel='stylesheet' media='print'
+          href='https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/2.5.0/fullcalendar.print.css'/>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script type='text/javascript'>
+      $(document).ready(function() {
+        // page is now ready, initialize the calendar...
+        $('#calendar').fullCalendar({
+          googleCalendarApiKey: 'AIzaSyBGq3YXhr92Vx8-p-VXAQmixHmWKLA_5Vo',
+          // put your options and callbacks here
+          header: {
+            left: 'title',
+            center: '',
+            right: 'prev,next'
+          },
+          events: {
+            googleCalendarId: 'qirrdmgmmo0v777dcdri7sd6tg@group.calendar.google.com'
+          },
+          eventColor: '#39c',
+          timeFormat: 'h(:mm)',
+          fixedWeekCount: false,
+          aspectRatio: 1.5,
+          eventRender: function(event, element) {
+            element.html(event.start.format('h:mm'));
+          }
+        });
+      });
+    </script>
+  </head>
       
            
    
     
-  </head>
+ 
 
  
 
